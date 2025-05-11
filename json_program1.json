@@ -1,0 +1,42 @@
+[
+  {
+    "name": "John Doe",
+    "birth_date": "2004-01-04",
+    "gender": "Male"
+  },
+  {
+    "name": "Jane Doe",
+    "birth_date": "2010-02-01",
+    "gender": "Female"
+  },
+  {
+    "name": "Elis Grey",
+    "birth_date": "2012-12-11",
+    "gender": "Female"
+  },
+  {
+    "name": "Petro San",
+    "birth_date": "2010-02-12",
+    "gender": "Female"
+  },
+  {
+    "name": "Vasi Pen",
+    "birth_date": "2011-06-05",
+    "gender": "Male"
+  },
+  {
+    "name": "Van Dame",
+    "birth_date": "2013-07-07",
+    "gender": "Male"
+  },
+  {
+    "name": "VASILE Doe",
+    "birth_date": "2009-11-11",
+    "gender": "Male"
+  },
+  {
+    "name": "PETRE Doe",
+    "birth_date": "2018-04-11",
+    "gender": "Female"
+  }
+]
