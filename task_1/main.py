@@ -3,25 +3,26 @@ import json
 import datetime
 
 
-# If json file were in inside another directory in working directory
-# ,then we could use os.path.join(<folder_location>,<file_name>)
+def read_json_file(data: str) -> dict:
+    file_path = os.path.join(data)
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        return data
 
-file_path = os.path.join('json_program1.json')
 
-with open(file_path, 'r') as file:
-    data = json.load(file)
 cur = datetime.datetime.today()
-print(cur)
-
-# Convert the string to a datetime object and then do the subsctraction
-# x = datetime.datetime.strptime(x,'%Y-%m-%d')
-
-for index, value in enumerate(data):
-    # print(data[index]['birth_date'])
-    x = data[index]['birth_date']
-    x = datetime.datetime.strptime(x, '%Y-%m-%d')
-    if (cur.year-x.year) < 18:
-        print(data[index])
 
 
-file.close()
+def search_age_minors(data):
+    for index, value in enumerate(data):
+        x = data[index]['birth_date']
+        x = datetime.datetime.strptime(x, '%Y-%m-%d')
+        if (cur.year-x.year) < 18:
+            print(data[index])
+
+
+if __name__ == "__main__":
+    data = read_json_file('json_program1.json')
+    minors = search_age_minors(data)
+
+
