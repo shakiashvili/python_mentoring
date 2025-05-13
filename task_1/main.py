@@ -10,10 +10,7 @@ def read_json_file(data: str) -> dict:
         return data
 
 
-cur = datetime.datetime.today()
-
-
-def search_age_minors(data) -> list:
+def search_age_minors(data: dict) -> list:
     minors = []
     cur = datetime.datetime.today()
     for index, value in enumerate(data):
@@ -27,4 +24,3 @@ def search_age_minors(data) -> list:
 if __name__ == "__main__":
     data = read_json_file('json_program1.json')
     minors = search_age_minors(data)
-    
