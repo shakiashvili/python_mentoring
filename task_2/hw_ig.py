@@ -2,7 +2,10 @@
 # non-iterables and elements from iterables (any nesting depth should be supported)
 # function should return an iterator (generator function)
 # don't use third-party libraries
-def merge_elems(*elems):
+from typing import Callable, Union
+
+
+def merge_elems(*elems: [int, list, str]) -> Union[int, str]:
     for element in elems:
         if isinstance(element, (list, tuple, set)):
             for i in merge_elems(*element):
@@ -28,10 +31,11 @@ for _ in merge_elems(a, b, c, d):
 # extra functionality: if arg function can't be applied, return element as is + text exception
 
 
-def map_like(fun, *elems):
+def map_like(fun: Callable[Union[str, int, list], [str, int]], 
+             *elems: Union[str, list, int]) -> Union[int, str]: 
     try:
         for elem in elems:
-            if elem.__str__():
+            if iter(elem):
                 yield fun(elem)
     except TypeError as e:
         yield f"{elem}: {e}"
