@@ -1,7 +1,7 @@
-from Domain import Domain
-from SalariedEmployee import SalariedEmployee
-from HourlyEmployee import HourlyEmployee
-from Company import Company
+from domain import Domain
+from salaried_employee import SalariedEmployee
+from hourly_employee import HourlyEmployee
+from company import Company
 
 
 if __name__ == "__main__":

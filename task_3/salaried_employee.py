@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Employee import Employee
+from employee import Employee
 
 
 @dataclass
@@ -15,4 +15,4 @@ class SalariedEmployee(Employee):
         self._salary = salary
 
     def calculate_payment(self) -> float:
-        return self._salary / 7
+        return self._salary / 4
