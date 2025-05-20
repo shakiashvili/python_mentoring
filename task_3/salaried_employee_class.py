@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from employee import Employee
+from employee_class import Employee
 
 
 @dataclass

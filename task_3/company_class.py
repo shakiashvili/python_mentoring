@@ -1,8 +1,8 @@
 from dataclasses import dataclass
-from employee import Employee
-from hourly_employee import HourlyEmployee
-from salaried_employee import SalariedEmployee
-from domain import Domain
+from employee_class import Employee
+from hourly_employee_class import HourlyEmployee
+from salaried_employee_class import SalariedEmployee
+from domain_class import Domain
 
 
 @dataclass
