@@ -18,3 +18,5 @@ setup(
         ],
     },
 )
+# To install use pip install .
+# To execute use my-cmd-line -i <file> -o <file>
