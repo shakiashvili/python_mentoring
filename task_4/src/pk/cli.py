@@ -1,8 +1,8 @@
 import argparse
-from pk.logger import log_error
+import logging
 
 
-def argument_parsing() -> str:
+def argument_parsing() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', help='Path to input file',
                         required=True)
@@ -17,7 +17,7 @@ def argument_parsing() -> str:
         output_file = args.output 
         return input_file, words, output_file
     except Exception as e:
-        return log_error(f'We are having an problem: {e}')
+        return logging.error(f'We are having an problem: {e}')
 
 
 if __name__ == '__main__':

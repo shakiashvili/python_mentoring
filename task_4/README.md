@@ -12,14 +12,13 @@ I have implemented **logging for better clarification**
  2. Then we need to activate it
                        `source env/bin/activate`
  3. Then we need to install the package
-	        `pip install e .`
+	        `pip install -e .`
   
  4. To run specific the tool ,you should use
     `my-cli -i <filename> -w <words> -o <output filename>`
 
    To be more specific we could use:
-  `my-cli -i some.txt -w
-    giorgi,epam,s -o txt.txt`
+  `my-cli -i some.txt -w giorgi,epam,s,jane,doe,Doe,company -o txt.txt`
     
   For this we need to mention the
      -i input file, which program will open
