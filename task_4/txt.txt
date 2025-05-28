@@ -1,1 +1,0 @@
-{'giorgi': 2, 'epam': 6, 'company': 8, 'jane': 2, 'doe': 5}

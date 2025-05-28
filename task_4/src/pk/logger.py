@@ -10,5 +10,4 @@ def logger_config():
             logging.StreamHandler()
             ]
         )
-if __name__ == '__main__':
-    logger_config()
+
