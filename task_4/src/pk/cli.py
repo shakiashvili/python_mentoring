@@ -18,3 +18,4 @@ def argument_parsing() -> None:
         return input_file, words, output_file
     except Exception as e:
         return logging.error(f'We are having an problem: {e}')
+        

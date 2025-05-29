@@ -10,4 +10,4 @@ def logger_config():
             logging.StreamHandler()
             ]
         )
-
+        

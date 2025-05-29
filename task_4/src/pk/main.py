@@ -1,8 +1,8 @@
+import logging
 from pk.decorator import decorator_function_to_calculate_execution_time as time_calculation
 from pk.cli import argument_parsing
 from pk.file_operations import FileOperations
 from pk.searching import word_occurance
-import logging
 
 
 @time_calculation

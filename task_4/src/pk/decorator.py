@@ -1,5 +1,5 @@
-from datetime import datetime
 import logging
+from datetime import datetime
 from typing import Callable
 
 
@@ -12,3 +12,4 @@ def decorator_function_to_calculate_execution_time(func: Callable) -> Callable:
         logging.info(f"Function name: {func.__name__} executed in time:{time}")
         return result
     return wrapper
+    

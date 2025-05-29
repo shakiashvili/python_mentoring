@@ -24,3 +24,4 @@ class FileOperations:
                 output_file.write(str(content) + '\n')
         except Exception as e:
             logging.error(f"We have an error: {e}")
+            
