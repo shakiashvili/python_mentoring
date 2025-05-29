@@ -54,7 +54,7 @@ class FilmsDatabaseManager:
     def __search_film_id(self, film: Films) -> None:
         return self.session.query(Films).filter_by(
             title=film.title, director=film.director,
-            release_year=film.release_year).first()
+            release_year=film.release_year).first().id
 
     def close_session(self) -> None:
         self.session.close()
