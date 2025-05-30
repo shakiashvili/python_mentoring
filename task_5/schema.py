@@ -42,7 +42,6 @@ class FilmsDatabaseManager:
             logging.info(f"Film {film.title} directer by {film.director}")
         if not films_list:
             return []
-            logging.warning("There is no films in the database")
 
     def delete_films(self) -> None:
         self.session.query(Films).delete()
