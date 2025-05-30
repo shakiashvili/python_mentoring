@@ -3,7 +3,7 @@ from schema import Films, FilmsDatabaseManager
 
 def main() -> None:
     try:
-        manager = FilmsDatabaseManager()
+        manager = FilmsDatabaseManager('films.db')
         film1 = Films(title='Mimino', director='Giorgi Danelia',
                       release_year=1977)
         film2 = Films(title='Lord of the rings', director='Peter Jackson',
