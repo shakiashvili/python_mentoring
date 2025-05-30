@@ -1,6 +1,9 @@
-from api_test_func import first_test_function as f1
-from api_test_func import second_test_function as f2
+from api_functions import first_func, second_func
 
 
-f1()
-f2()
+def main():
+    first_func()
+    second_func()
+
+
+main()
