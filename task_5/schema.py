@@ -26,21 +26,22 @@ class Films(Base):
 class FilmsDatabaseManager:
     def __init__(self, db_name):
         self.dbname = db_name
-        self.engine = create_engine(f"sqlite:///{self.dbname}")
+        self.engine = create_engine(f"sqlite:///{db_name}")
+        Session = sessionmaker(bind=self.engine)
+        self.session = Session()
         Base.metadata.create_all(self.engine)
-        self.session = sessionmaker(self.engine)()
 
     def add_film(self, film: Films) -> None:
         self.session.add(film)
         self.session.commit()
         logging.info(f'Film {film.title} is added')
-        return film
 
     def get_films(self) -> List[Films]:
         films_list = self.session.query(Films).all()
         for film in films_list:
             logging.info(f"Film {film.title} directer by {film.director}")
         if not films_list:
+            return []
             logging.warning("There is no films in the database")
 
     def delete_films(self) -> None:
