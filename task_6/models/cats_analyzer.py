@@ -1,41 +1,17 @@
 import logging
-import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
-
+from tools.httpclient import HTTPClient
 logging.basicConfig(level=logging.INFO, filename='tool.log',
                     format="%(asctime)s - %(levelname)s - %(message)s")
-
-
-class HTTPClient:
-    def __init__(self, endpoint):
-        self.endpoint = endpoint
-
-    def get(self, path: str):
-        full_url = urljoin(self.endpoint, path)
-        response = requests.get(full_url)
-        return response
-
-    def post(self, path: str, **kwargs):
-        full_url = urljoin(self.endpoint, path)
-        response = requests.post(full_url, kwargs)
-        return response
-
-    def put(self, path: str, **kwargs):
-        full_url = urljoin(self.endpoint, path)
-        response = requests.put(full_url, kwargs)
-        return response
-
-    def delete(self, path: str):
-        full_url = urljoin(self.endpoint, path)
-        requests.delete(full_url)
 
 
 class CatsAnalyzer(HTTPClient):
     def __init__(self, endpoint):
         super().__init__(endpoint)
 
-    def status_code_analyzer(self, method, path):
+    def status_code_analyzer(self, method, path=None):
+        if not path:
+            response = method()
         response = method(path)
         logging.info(f'{response.url}, {response.status_code}')
 

@@ -8,10 +8,11 @@ Then, We need to install the required packages
 
 `pip install requests`
 `pip install beautifulsoup4`
+`pip install pytest`
 
 I have chosen lmxl python library, you could use html5lib as well.  
 `pip install lxml`
 
-To execute the application
+To test the application
 
-`python main.py`
+`pytest`
