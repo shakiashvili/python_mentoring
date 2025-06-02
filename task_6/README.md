@@ -10,8 +10,7 @@ Then, We need to install the required packages
 `pip install beautifulsoup4`
 `pip install pytest`
 
-I have chosen lmxl python library, you could use html5lib as well.  
-`pip install lxml`
+I have chosen 'html.parser' for parsing purposes but you could use lxml or html5lib
 
 To test the application
 
