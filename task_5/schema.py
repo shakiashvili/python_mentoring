@@ -1,6 +1,6 @@
 import logging
-from typing import List
 from sqlalchemy import create_engine, Column, Integer, String
+from typing import List, Optional
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from logging_cfng import logs_config as conf
@@ -57,7 +57,7 @@ class FilmsDatabaseManager:
         else:
             logging.error('Film is not found in the database')
 
-    def __search_film(self, film: Films) -> None:
+    def __search_film(self, film: Films) -> Optional[Films]:
         return self.session.query(Films).filter_by(
             title=film.title, director=film.director,
             release_year=film.release_year).first()
