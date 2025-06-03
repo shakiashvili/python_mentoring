@@ -4,13 +4,13 @@ from models.cats_analyzer import CatsAnalyzer
 
 
 @pytest.fixture(scope='session')
-def env_config():
+def env_config() -> dict:
+    """This function returns dictionary ,key,value pair of the base_url"""
     with open('env.yaml') as f:
-        result = yaml.load(f, Loader=yaml.FullLoader)
-        return result.get('base_url')
+        return yaml.load(f, Loader=yaml.FullLoader)     
 
 
 @pytest.fixture
-def test_client(env_config) -> CatsAnalyzer:
-    client = CatsAnalyzer(env_config)
-    return client
+def test_client(env_config: dict) -> CatsAnalyzer:
+    '''This function returns an instance of CatsAnalyzer with url'''
+    return CatsAnalyzer(env_config.get('base_url'))
