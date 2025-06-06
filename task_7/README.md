@@ -17,5 +17,5 @@ then to see the report -
 To see html report - 
 `coverage html`
 
-To speed up execution use 
-`pytest -n auto`
+To execute in parallel use I have created specific groups to be executed(since they depend on each other)-
+`pytest -n 4 --dist loadgroup`

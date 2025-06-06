@@ -1,6 +1,6 @@
 class ECommerceApp:
     def __init__(self):
-        self.users = {} 
+        self.users = {}
         # Changed to a dictionary to store usernames and passwords
         self.products = {'apple': 1.0, 'banana': 0.5, 'orange': 0.75}
         self.cart = {}
