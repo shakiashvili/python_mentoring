@@ -1,5 +1,5 @@
 from locators import Locators
-from .basepage import BasePage
+from basepage import BasePage
 
 
 class CareerPage(BasePage):
